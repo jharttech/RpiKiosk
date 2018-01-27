@@ -25,7 +25,7 @@ dialog --clear \
 	--timeout 1 \
 	--title "Jharttech" \
 	--exit-label "" \
-	--textbox logo.txt 0 0
+	--textbox /usr/local/bin/logo.txt 0 0
 
 ##################################################
 
@@ -64,6 +64,7 @@ while true; do
 	if [ "${yn}" == "0"];
 	then
 		/usr/local/bin/RpiKioskMain.sh
+		exit
 	else if [ "${yn}" == "1" ];
 	then
 		sudo reboot
