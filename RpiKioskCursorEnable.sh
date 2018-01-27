@@ -26,7 +26,7 @@ dialog --title "Jharttech" \
 	--clear \
 	--timeout 1 \
 	--exit-label "" \
-	--textbox logo.txt 0 0
+	--textbox /usr/local/bin/logo.txt 0 0
 
 
 #####################################################
