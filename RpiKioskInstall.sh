@@ -26,7 +26,7 @@ dialog  --title "Jharttech" \
 	--clear \
 	--timeout 1 \
 	--exit-label "" \
-	--textbox logo.txt 0 0
+	--textbox /usr/local/bin/logo.txt 0 0
 
 ######################################################
 
@@ -241,6 +241,7 @@ dialog --title "Thank You!" \
 	if [ "${yn}" == "0" ];
 	then
 		/usr/local/bin/RpiKioskMenu.sh
+		exit
 	else if [ "${yn}" == "1" ];
 	then
 		sudo reboot
