@@ -1,7 +1,6 @@
 #! /bin/bash
 set -x
 
-
 ############################################
 
 # This script will act as a starting page for
@@ -28,8 +27,9 @@ exec 3>&1
 dialog --title "Jharttech" \
 	--exit-label "" \
 	--timeout 1 \
+	--colors \
 	--begin 0 0 \
-	--textbox logo.txt 0 0 \
+	--textbox /usr/local/bin/logo.txt 0 0 \
 
 
 ############################################
@@ -52,7 +52,7 @@ then
 		Disable_Mouse)
 			/usr/local/bin/RpiKioskCursorDisable.sh;;
 		Enable_Mouse)
-			/usr/local/bin/RpiKioskCursorEnable;;
+			/usr/local/bin/RpiKioskCursorEnable.sh;;
 	esac
 else if [ "${_Respns}" == "1" ];
 then

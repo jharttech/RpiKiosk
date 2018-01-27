@@ -174,7 +174,7 @@ while true; do
 while true; do
 	dialog --title "Memory Split" \
 	--clear \
-	--yesno "Finally, would you like to change your Pi's Memory Split?\n\n(If you do not know what this means choose NO)" 0 0
+	--yesno "Finally, would you like to change your Pi's Memory Split?\n\n(If you do not know what this means type choose NO)" 0 0
 	yn=$?
 	if [ "${yn}" == "0" ];
 	then

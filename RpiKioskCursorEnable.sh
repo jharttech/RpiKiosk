@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 ####################################################
 
 # This is a simple script to re-enable the mouse cursor
@@ -61,6 +61,7 @@ while true; do
 	if [ "${yn}" == "0" ];
 	then
 		/usr/local/bin/RpiKioskMain.sh
+		exit
 	else if [ "${yn}" == "1" ];
 	then
 		sudo Reboot
