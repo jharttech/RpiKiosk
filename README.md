@@ -13,6 +13,8 @@ These instructions are for the RpiKiosk scripts.  These scripts were designed to
 
 Also, this version of the RpiKiosk scripts is gui based rather than terminal based. (You will need to use the terminal to start the script)
 
+To install Rapian Strech to your pi please go to https://www.raspberrypi.org/downloads/raspbian/ and follow the instructions there.
+
 DEPENDENCY
 
 These scripts do directly depend on the "dialog" package.  You will need to install this package prior to running these versions of the RpiKiosk scripts. You can install "dialog" using the following command on your pi:
