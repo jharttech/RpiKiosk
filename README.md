@@ -1,6 +1,144 @@
 # RpiKiosk
 GUI version of RpiKiosk_cli
 
-This is still in development, if you wish to use this as of 20180126 you will need to clone or download the zip file onto your Raspberry Pi 3, then move the files into /usr/local/bin/
+Create a simple kiosk or digital sign using your raspberry pi 3.  This program will do the heavy lifting by writing needed information to the correct config files base upon your entries.
+
+This is still in development, if you wish to use this as of 20180126 you will need to clone or download the zip file onto your Raspberry Pi 3, then move the files into /usr/local/bin/ then run RpiKioskMain.
 
 This was specifically written for use on an armhf architeture Raspberry Pi 2 or 3 running Raspbian-stretch OS.
+
+INSTRUCTIONS
+
+These instructions are for the RpiKiosk scripts.  These scripts were designed to help with the heavy lifting of creating a kiosk or digital sign using a raspberry pi 2 or 3 with armhf architecture.
+
+Also, this version of the RpiKiosk scripts is gui based rather than terminal based. (You will need to use the terminal to start the script)
+
+DEPENDENCY
+
+These scripts do directly depend on the "dialog" package.  You will need to install this package prior to running these versions of the RpiKiosk scripts. You can install "dialog" using the following command on your pi:
+
+	$ sudo apt-get install dialog
+
+There are also a few packages that these scripts do not directly depend on but will help the user should they want to make further changes.  The RpiKioskInstall script will look for these and install them if they are not found on your pi.  If you want to install them before running the script then run the following commands on your pi.
+
+$ sudo apt-get update
+
+$ sudo apt-get install git
+
+$ sudo apt-get install vim clutter
+
+The "git" package is if you are familiar with using git and want to clone the RpiKiosk Repositry rather than downloading the zip file.
+
+The "vim" package is simply a text editor.  This package is not crucial but will be of benefit if you are an advance linux or pi user.
+
+The "clutter" package will hide your mouse cursor when it is not being used.  This is good for locations that your kiosk or digital sign will not be with in reach of public.  In the case that your kiosk or digital sign is, the RpiKioskCursorDisable script will allow you to completely disable your mouse cursor on your pi. (Can be Reverted using the RpiKioskCursorEnable script)
+
+STEPS
+
+DEB PACKAGE USE ONLY
+
+(If you wish to download the deb package version please use this link: https://jharttech.weebly.com/uploads/9/5/0/7/95072548/rpikiosk_1.0-1.deb   then run the following command to install:)
+
+	$ sudo dpkg -i rpikiosk_1.0-1.deb
+
+	(If the install fails and complains about a dependency then install the "dialog" package using:)
+
+	$ sudo apt-get -f install
+
+	(then repeat)
+
+	$ sudo dpkg -i RpiKiosk_1.0-1.deb
+
+(Now you simply need to run the following command in the terminal)
+
+	$ RpiKioskMain
+
+(From here you can select what you would like to do: Install, Uninstall, Enable Mouse, Disable Mouse)
+
+RUN FROM CLONE OR ZIP DOWNLOAD
+
+1.	Clone the RpiKiosk from https://github.com/jharttech/RpiKiosk.git
+
+		$ git clone https://github.com/jharttech/RpiKiosk.git
+
+OR
+
+1.	Download the RpiKiosk zip file from https://github.com/jharttech/RpiKiosk/archive/master.zip to your pi.
+
+	extract the files:
+
+		$ cd Downloads
+
+		$ unzip RpiKiosk-master.zip
+
+		$ mv -r RpiKiosk-master.zip /home/pi/RpiKiosk
+
+2.	Go into the RpiKiosk folder.
+
+		$ cd
+
+		$ cd RpiKiosk
+
+3.	Run the Install script (If you did not download the deb package version)
+
+		$ ./RpiKioskMain
+
+	From the Main menu you can select what you would like to do.  You can choose between: Install, Uninstall, Enable Mouse, Disable Mouse.
+
+	Install : This will start the Installation script and will walk you through the setup of your kiosk or digital sign.  Simply follow the script and answer with the desired inputs.  Once the script has finished you should restart your pi for the changes to take effect.
+
+OR
+
+3.	If you downloaded and installed the deb package version of the RpiKiosk please refer to the "DEB PACKAGE ONLY" section above.
+
+NOTES
+
+In the Main menu you can choose between: Install, Uninstall, Enable Mouse, Disable Mouse.
+	Install: This will start the Installation script and will walk you through the setup of your kiosk or digital sign.  Simply follow the script and answer with the desired inputs.
+	Uninstall: This will start the Uninstall script and will revert all config files back to the pi defaults.
+	Enable Mouse: This will start the Enable Mouse script.  If you disabled the mouse during initial installation this will re-enable your mouse cursor without uninstalling the kiosk.
+	Disable Mouse: This will start the Disable Mouse script.  If you did not disable the mouse during initial installation this will allow you to do so should you feel the need.
+
+I recommend you setting up a free Dakboard account at https://dakboard.com/site.  This company will help you quickly set up a nice digital display for free. (The free version is limited on customizations)
+
+Screen Orientation:
+»·······This setting is dependant upon which way your digital sign (monitor or TV) is mounted.  Your options are "Landscape" or Portrait".
+
+Enter your URL:
+	The Install script will ask you for a URL to your kiosk, video, or slideshow.  If you are using DAKBoard, you will find this url under your account settings.  If will be called your Private URL.  If you are using google slides this will be your public published URL.  This URL can be a URL to any type of legal media that you wish to display on your digital sign.
+
+Disable Mouse Cursor:
+	The Install script will ask if you would like to disable your mouse cursor.  If you choose to do so, you can revert this at a later date by running the EnableCursor.sh script.  If you choose not to disable the mouse cursor during install, you can disable it later by running the DisableCursor.sh script.
+
+Memory Split:
+	The Install script will ask if you would like to change the memory split of your pi.  If you do not know what this means please indicate that you would not like to change this value by entering "NO" when prompted.  You can change this later by running the "$ raspi-config" command.
+
+How to get to the terminal once you have installed the kiosk:
+	You may want to run other scripts or exit out of your newely created Kiosk.  To do this on your pi, press the "windows" key on your keyboard.  Next arrow down to "Accessories", arrow to the right one time, then arrow down to terminal and press the "enter" key.  Once the terminal is up, type the following command to stop the Kiosk:
+
+		$ killall chromium-browsers
+
+	(This will stop the kiosk and allow you to run other scripts or use your pi how ever you desire.)
+
+UNINSTALL
+
+To uninstall the kiosk simply return to the terminal and run RpiKioskMain, then select the Uninstall option.  This script will revert all config files back to the original states and will enable the mouse if it has been disabled.
+
+
+http://www.gnu.org/copyleft/gpl.html
+
+Information on this Site is Copyright (C) 2009-2018 JHart Technology.
+This information is free; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This work is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
+<200b>
+On Debian systems, the complete text of the GNU General Public License can be found in /usr/share/common-licenses/GPL file.
+
+
+IN NO EVENT WILL WE BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, INCIDENTAL, SPECIAL OR EXEMPLARY DAMAGES FOR ANY USE OF THIS SITE, OR USE OF ANY OTHER LINKED SITE, OR SOFTWARE, EVEN IF WE ARE ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+Privacy Policy
+https://jharttech.weebly.com/uploads/9/5/0/7/95072548/jhartprivacypolicy.htm
+
