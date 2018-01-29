@@ -171,13 +171,13 @@ while true; do
 
 # Here we ask the user if they would like to change the RPi Memory split
 
-while true; do
 	dialog --title "Memory Split" \
 	--clear \
 	--yesno "Finally, would you like to change your Pi's Memory Split?\n\n(If you do not know what this means type choose NO)" 0 0
 	yn=$?
 	if [ "${yn}" == "0" ];
 	then
+		while true; do
 		_Mem_Val=$(dialog --title "Assign Memory" \
 		--clear \
 		--inputbox "Please enter the Memory Split you would like.\n\n(Must be one of the following values '64, 128, 256, 512' NOTE 64 is the default)" 0 0 2>&1 1>&3)
@@ -218,6 +218,7 @@ while true; do
 			--infobox "Your Pi's memory split will remain set to default values." 0 0
 			break;;
 		esac
+	done
 	else if [ "${yn}" == "1" ];
 	then
 		dialog --title "Memory Split" \
@@ -227,7 +228,6 @@ while true; do
 		break
 	fi
 fi
-done
 
 
 ##########################################################
