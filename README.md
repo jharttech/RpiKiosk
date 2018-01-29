@@ -41,11 +41,11 @@ DEB PACKAGE USE ONLY
 
 (If you wish to download the deb package version please use this link: https://jharttech.weebly.com/uploads/9/5/0/7/95072548/rpikiosk_1.0-1.deb   then run the following command to install:)
 
+	$ cd Downloads
+
 	$ sudo dpkg -i rpikiosk_1.0-1.deb
 
 	(If the install fails and complains about a dependency then install the "dialog" package using:)
-
-	$ cd Downloads
 
 	$ sudo apt-get -f install
 
