@@ -77,13 +77,19 @@ OR
 
 		$ mv -r RpiKiosk-master.zip /home/pi/RpiKiosk
 
-2.	Go into the RpiKiosk folder.
+2.	Go into the RpiKiosk folder and move files to the correct location.
 
 		$ cd
 
 		$ cd RpiKiosk
 
+		$ sudo mv Rpi* /usr/local/bin/
+
+		$ sudo mv logo.txt /usr/local/bin/
+
 3.	Run the Install script (If you did not download the deb package version)
+
+		$ cd /usr/local/bin
 
 		$ ./RpiKioskMain
 
