@@ -75,7 +75,7 @@ OR
 
 		$ unzip RpiKiosk-master.zip
 
-		$ mv -r RpiKiosk-master.zip /home/pi/RpiKiosk
+		$ mv RpiKiosk-master.zip /home/pi/RpiKiosk
 
 2.	Go into the RpiKiosk folder and move files to the correct location.
 
