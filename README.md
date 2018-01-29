@@ -43,6 +43,8 @@ DEB PACKAGE USE ONLY
 
 	(If the install fails and complains about a dependency then install the "dialog" package using:)
 
+	$ cd Downloads
+
 	$ sudo apt-get -f install
 
 	(then repeat)
