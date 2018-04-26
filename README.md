@@ -70,11 +70,4 @@ $ ./RpiKioskMain</pre></code>
 					<p id="blog"><h2><strong>UNINSTALL</strong></h2></p>
 					<p id="blog">To uninstall the kiosk simply return to the terminal and run RpiKioskMain, then select the "Uninstall" option.  This script will revert all config files back to the original states and will enable the mouse if it has been disabled.</br></p>
 					<p id="disclaim"><b>IN NO EVENT WILL WE BE LIABLE FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, INCIDENTAL, SPECIAL OR EXEMPLARY DAMAGES FOR ANY USE OF THIS SITE, OR USE OF ANY OTHER LINKED SITE, OR SOFTWARE, EVEN IF WE ARE ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</b></br></br></p>
-					<form action="" method="post" name="blog">
-					<input type="submit" name="blog" value="Back" />
-
-				</td>
-			</tr>
-		</table>
-	</body>
 </html>
