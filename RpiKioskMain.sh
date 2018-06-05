@@ -23,6 +23,11 @@ exec 3>&1
 
 ############################################
 
+#Install needed package "dialog"
+
+sudo apt-get update
+sudo apt-get install dialog
+
 # Logo Call
 dialog --title "Jharttech" \
 	--exit-label "" \
