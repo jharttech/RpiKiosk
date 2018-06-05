@@ -64,7 +64,7 @@ while true; do
 		exit
 	else if [ "${yn}" == "1" ];
 	then
-		sudo Reboot
+		sudo reboot
 	fi
 fi
 done
