@@ -130,7 +130,7 @@ while true; do
 					break
 			fi;;
 			1)
-			./MainMenu.sh;;
+			./RpiKioskMain.sh;;
 		esac
 	else
 		sudo mv ~/.config/lxsession/LXDE-pi/autostart.backup ~/.config/lxsession/LXDE-pi/autostart
