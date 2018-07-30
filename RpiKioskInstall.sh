@@ -124,9 +124,9 @@ while true; do
 					dialog --title "Autostart Configs" \
 					--clear \
 					--sleep 3 \
-					--infobox "Now writing to following entries to the autostart configuration file.\n\n@xset s off\n@xset -dpms\n@xset s noblank\n@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --kiosk $_URL" 0 0
+					--infobox "Now writing to following entries to the autostart configuration file.\n\n@xset s off\n@xset -dpms\n@xset s noblank\n@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" 0 0
 					echo -e "@xset s off\n@xset -dpms\n@xset s noblank" | sudo tee -a ~/.config/lxsession/LXDE-pi/autostart >/dev/null
-					echo -e "@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --kiosk $_URL" | sudo tee -a ~/.config/lxsession/LXDE-pi/autostart >/dev/null
+					echo -e "@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" | sudo tee -a ~/.config/lxsession/LXDE-pi/autostart >/dev/null
 					break
 			fi;;
 			1)
