@@ -62,7 +62,7 @@ fi
 # and write it to the appropriate config file.
 
 while true; do
-	_Prev_Ran=$(ls /boot/ | grep "config.txt.DSbackup" >/dev/null)
+	_Prev_Ran=$(ls /boot/ | grep "config.txt.DSbackup")
 	if [ "" == "$_Prev_Ran" ];
 	then
 		dialog --title "Screen Orientation" \
@@ -101,8 +101,8 @@ done
 #######################################################
 
 while true; do
-	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup" >/dev/null)
-	if [ "" == "$_Prev_RanTwo" ]
+	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup.original")
+	if [ "" == "$_Prev_RanTwo" ];
 	then
 		_URL=$(dialog --title "Signage URL" \
 		--clear \
@@ -120,7 +120,7 @@ while true; do
 					--clear \
 					--sleep 3 \
 					--infobox "Now writing chromium and kiosk configurations to config file.\nThere will be a backup of original config file created.\nIt will be located ~/.config/lxsession/LXDE-pi/autostart.DSbackup." 0 0
-					cp ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.DSbackup
+					sudo mv ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.DSbackup.original
 					dialog --title "Autostart Configs" \
 					--clear \
 					--sleep 3 \
@@ -133,7 +133,10 @@ while true; do
 			./RpiKioskMain.sh;;
 		esac
 	else
-		sudo mv ~/.config/lxsession/LXDE-pi/autostart.backup ~/.config/lxsession/LXDE-pi/autostart
+		dialog --title "Test" \
+			--sleep 5 \
+			--infobox "Found the file" 0 0
+		sudo mv ~/.config/lxsession/LXDE-pi/autostart.DSbackup ~/.config/lxsession/LXDE-pi/autostart
 	fi
 done
 ##########################################################
