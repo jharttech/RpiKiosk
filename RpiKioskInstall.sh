@@ -101,7 +101,7 @@ done
 #######################################################
 
 while true; do
-	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup.original")
+	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
 	if [ "" == "$_Prev_RanTwo" ];
 	then
 		_URL=$(dialog --title "Signage URL" \
