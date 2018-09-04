@@ -32,10 +32,10 @@ $ sudo apt-get install git vim clutter</pre></code>
 					<p id="blog"><h2><strong>DEB PACKAGE USE ONLY</strong></h2></p>
 					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.0-4.deb">rpikiosk_1.0-4.deb</a></br></p>
 					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.0-4.deb
-$ sudo dpkg -i rpikiosk_1.0-4.deb</pre></code>
+$ sudo dpkg -i rpikiosk_1.0-5.deb</pre></code>
 					<p id="blog">If the install fails and complains about a dependency the install the "dialog" package using:</br></p>
 					<code><pre>$ sudo apt-get -f install
-$ sudo dpkg -i rpikiosk_1.0-4.deb</pre></code>
+$ sudo dpkg -i rpikiosk_1.0-5.deb</pre></code>
 					<p id="blog">Now you can simply run the following command in the terminal and follow on-screen prompts and options.</br></p>
 					<code><pre>$ RpiKioskMain</pre></code>
 					<p id="blog">From here you can select what you would like to do: Install, Uninstall, Enable Mouse, Disable Mouse.</br></p>
