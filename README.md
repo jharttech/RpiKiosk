@@ -30,12 +30,12 @@
 $ sudo apt-get install git vim clutter</pre></code>
 					<p id="blog">The "git" package is for users that are familiar with using git and want to clone the RpiKiosk Repository rather than downloading the zip file.</br>The "vim" package is simply a terminal text editor.  This package is not crucial but will be of benefit if you are an advanced linux or pi user.</br>The "clutter" package will hide your pi's mouse cursor when it is not being used.  This is good for locations that your kiosk or digital sign will not be within reach of public.  In the case that your kiosk or digital sign is within reach of public, the RpiKioskCursorDisable script will allow you to completely disable your mouse cursor on your pi. (This can be reverted using the RpiKioskCursorEnable script)</br></p>
 					<p id="blog"><h2><strong>DEB PACKAGE USE ONLY</strong></h2></p>
-					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.0-6.deb">rpikiosk_1.0-6.deb</a></br></p>
-					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.0-6.deb
-$ sudo dpkg -i rpikiosk_1.0-6.deb</pre></code>
+					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.0-7.deb">rpikiosk_1.0-7.deb</a></br></p>
+					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.0-7.deb
+$ sudo dpkg -i rpikiosk_1.0-7.deb</pre></code>
 					<p id="blog">If the install fails and complains about a dependency the install the "dialog" package using:</br></p>
 					<code><pre>$ sudo apt-get -f install
-$ sudo dpkg -i rpikiosk_1.0-6.deb</pre></code>
+$ sudo dpkg -i rpikiosk_1.0-7.deb</pre></code>
 					<p id="blog">Now you can simply run the following command in the terminal and follow on-screen prompts and options.</br></p>
 					<code><pre>$ RpiKioskMain</pre></code>
 					<p id="blog">From here you can select what you would like to do: Install, Uninstall, Enable Mouse, Disable Mouse.</br></p>
