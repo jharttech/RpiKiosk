@@ -133,9 +133,6 @@ while true; do
 			./RpiKioskMain.sh;;
 		esac
 	else
-		dialog --title "Test" \
-			--sleep 5 \
-			--infobox "Found the file" 0 0
 		sudo mv ~/.config/lxsession/LXDE-pi/autostart.DSbackup ~/.config/lxsession/LXDE-pi/autostart
 	fi
 done
