@@ -61,10 +61,14 @@ fi
 # Now going to ask the user for input about the desired screen rotation
 # and write it to the appropriate config file.
 
+#######################################################
+
 while true; do
 	_Prev_Ran=$(ls /boot/ | grep "config.txt.DSbackup")
 	if [ "" == "$_Prev_Ran" ];
 	then
+		# Make a Backup of original config file
+		sudo cp /boot/config.txt /boot/config.txt.original
 		dialog --title "Screen Orientation" \
 		--clear \
 		--yes-label "Landscape" \
@@ -104,6 +108,8 @@ while true; do
 	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
 	if [ "" == "$_Prev_RanTwo" ];
 	then
+		# Make a copy of original config file
+		sudo cp ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.original
 		_URL=$(dialog --title "Signage URL" \
 		--clear \
 		--inputbox "Please enter the URL of the kiosk video, or slideshow that you wish to show below:" 16 52 2>&1 1>&3)
@@ -120,7 +126,7 @@ while true; do
 					--clear \
 					--sleep 3 \
 					--infobox "Now writing chromium and kiosk configurations to config file.\nThere will be a backup of original config file created.\nIt will be located ~/.config/lxsession/LXDE-pi/autostart.DSbackup." 0 0
-					sudo mv ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.DSbackup.original
+					sudo mv ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.DSbackup
 					dialog --title "Autostart Configs" \
 					--clear \
 					--sleep 3 \
@@ -143,6 +149,9 @@ done
 sudo sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /home/pi/.config/chromium/Default/Preferences
 sudo sed -i 's/"exit_type":"Crashed"/"exit_type":"Normal"/' /home/pi/.config/chromium/Default/Preferences
 ##########################################################
+##########################################################
+
+##########################################################
 
 # Here we edit the /etc/lightdm/lightdm.conf file to completely remove the mouse cursor from the system.
 while true; do
@@ -152,6 +161,8 @@ while true; do
 	yn=$?
 	if [ "${yn}" == "0" ];
 		then
+			# Make a copy of original config file
+			sudo cp /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.original
 			dialog --title "Remove Mouse" \
 			--clear \
 			--sleep 3 \
@@ -240,7 +251,6 @@ dialog --title "Thank You!" \
 	yn=$?
 	if [ "${yn}" == "0" ];
 	then
-		/usr/local/bin/RpiKioskMenu.sh
 		exit
 	else if [ "${yn}" == "1" ];
 	then

@@ -56,7 +56,7 @@ while true; do
 				--sleep 3 \
 				--infobox "Changing /boot/config.txt back to original state." 0 0
 			sudo rm -rf /boot/config.txt
-			sudo mv /boot/config.txt.DSbackup /boot/config.txt
+			sudo mv /boot/config.txt.original /boot/config.txt
 		fi
 		_Autostart_Check=$(ls /home/pi/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
 		dialog --title "Revert Autostart Config" \
@@ -75,7 +75,7 @@ while true; do
 				--sleep 3 \
 				--infobox "Changing autostart config back to the original state." 0 0
 			sudo rm -rf /home/pi/.config/lxsession/LXDE-pi/autostart
-			sudo mv /home/pi/.config/lxsession/LXDE-pi/autostart.DSbackup /home/pi/.config/lxsession/LXDE-pi/autostart
+			sudo mv /home/pi/.config/lxsession/LXDE-pi/autostart.original /home/pi/.config/lxsession/LXDE-pi/autostart
 		fi
 		_Kiosk_Ran=$(ls /etc/lightdm/ | grep "lightdm.conf.DSbackup")
 		dialog --title "Mouse Status" \
@@ -94,7 +94,7 @@ while true; do
 				--sleep 4 \
 				--infobox "Reverting the /etc/lightdm/lightdm.conf file back to original.\n\nThis will allow your mouse cursor to return after rebooting your pi." 0 0
 			sudo rm -rf /etc/lightdm/lightdm.conf
-			sudo mv /etc/lightdm/lightdm.conf.DSbackup /etc/lightdm/lightdm.conf
+			sudo mv /etc/lightdm/lightdm.conf.original /etc/lightdm/lightdm.conf
 			fi
 			break
 	else
@@ -119,10 +119,13 @@ while true; do
 	yn=$?
 	if [ "${yn}" == "0" ];
 	then
-		/usr/local/bin/RpiKioskMain.sh
+		sudo rm -r /usr/local/bin/License
+		sudo rm -r /usr/local/bin/logo.txt
+		sudo rm -f /usr/local/bin/Rpi*
 		exit
 	else if [ "${yn}" == "1" ];
 	then
+		sudo rm -f /usr/local/bin/Rpi*
 		sudo reboot
 	fi
 fi
