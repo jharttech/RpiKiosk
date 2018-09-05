@@ -32,10 +32,10 @@ $ sudo apt-get install git vim clutter</pre></code>
 					<p id="blog"><h2><strong>DEB PACKAGE USE ONLY</strong></h2></p>
 					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.0-7.deb">rpikiosk_1.0-7.deb</a></br></p>
 					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.0-7.deb
-$ sudo dpkg -i rpikiosk_1.0-7.deb</pre></code>
+$ sudo dpkg -i RpiKiosk_1.0-7.deb</pre></code>
 					<p id="blog">If the install fails and complains about a dependency the install the "dialog" package using:</br></p>
 					<code><pre>$ sudo apt-get -f install
-$ sudo dpkg -i rpikiosk_1.0-7.deb</pre></code>
+$ sudo dpkg -i RpiKiosk_1.0-7.deb</pre></code>
 					<p id="blog">Now you can simply run the following command in the terminal and follow on-screen prompts and options.</br></p>
 					<code><pre>$ RpiKioskMain</pre></code>
 					<p id="blog">From here you can select what you would like to do: Install, Uninstall, Enable Mouse, Disable Mouse.</br></p>
@@ -54,7 +54,7 @@ $ sudo mv Rpi* /usr/local/bin/
 $ sudo mv logo.txt /usr/local/bin/</pre></code>
 					<p id="blog">3. Run the Install Script (If you did not download the deb package version)</br></p>
 					<code><pre>$ cd /usr/local/bin
-$ chmod +x RpiKioskMain
+$ chmod +x RpiKioskMain.sh
 $ ./RpiKioskMain</pre></code>
 					<p id="blog">From the Main menu you can select what you would like to do.  You can choose between: Install, Uninstall, Enable Mouse, Disable Mouse.<br>Install: This will start the Installation script and will walk you through the setup of your kiosk or digital sign.  Simply followw the script and answer with the desired inputs.  Once the script has finished you should restart your pi for the changes to take effect.<br>(If you downloaded and installed the deb package version of the RpiKiosk please refer to the "DEB PACKAGE ONLY" section above.</br></p>
 					<p id="blog"><h2><strong>NOTES</strong></h2><p>
