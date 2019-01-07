@@ -58,7 +58,7 @@ while true; do
 			sudo rm -rf /boot/config.txt
 			sudo mv /boot/config.txt.original /boot/config.txt
 		fi
-		_Autostart_Check=$(ls /home/pi/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
+		_Autostart_Check=$(ls /etc/xdg/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
 		dialog --title "Revert Autostart Config" \
 			--clear \
 			--cleep 3 \
