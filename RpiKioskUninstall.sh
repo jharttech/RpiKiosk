@@ -74,8 +74,8 @@ while true; do
 				--clear \
 				--sleep 3 \
 				--infobox "Changing autostart config back to the original state." 0 0
-			sudo rm -rf /home/pi/.config/lxsession/LXDE-pi/autostart
-			sudo mv /home/pi/.config/lxsession/LXDE-pi/autostart.original /home/pi/.config/lxsession/LXDE-pi/autostart
+			sudo rm -rf /etc/xdg/lxsession/LXDE-pi/autostart
+			sudo mv /etc/xdg/lxsession/LXDE-pi/autostart.original /etc/xdg/lxsession/LXDE-pi/autostart
 		fi
 		_Kiosk_Ran=$(ls /etc/lightdm/ | grep "lightdm.conf.DSbackup")
 		dialog --title "Mouse Status" \

@@ -109,7 +109,7 @@ while true; do
 	if [ "" == "$_Prev_RanTwo" ];
 	then
 		# Make a copy of original config file
-		sudo cp ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.original
+		sudo cp /etc/xdg/lxsession/LXDE-pi/autostart /etc/xdg/lxsession/LXDE-pi/autostart.original
 		_URL=$(dialog --title "Signage URL" \
 		--clear \
 		--inputbox "Please enter the URL of the kiosk video, or slideshow that you wish to show below:" 16 52 2>&1 1>&3)
@@ -125,21 +125,21 @@ while true; do
 					dialog --title "Writing to Config" \
 					--clear \
 					--sleep 3 \
-					--infobox "Now writing chromium and kiosk configurations to config file.\nThere will be a backup of original config file created.\nIt will be located ~/.config/lxsession/LXDE-pi/autostart.DSbackup." 0 0
-					sudo mv ~/.config/lxsession/LXDE-pi/autostart ~/.config/lxsession/LXDE-pi/autostart.DSbackup
+					--infobox "Now writing chromium and kiosk configurations to config file.\nThere will be a backup of original config file created.\nIt will be located /etc/xdg/lxsession/LXDE-pi/autostart.DSbackup." 0 0
+					sudo mv /etc/xdg/lxsession/LXDE-pi/autostart /etc/xdg/lxsession/LXDE-pi/autostart.DSbackup
 					dialog --title "Autostart Configs" \
 					--clear \
 					--sleep 3 \
 					--infobox "Now writing to following entries to the autostart configuration file.\n\n@xset s off\n@xset -dpms\n@xset s noblank\n@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" 0 0
-					echo -e "@xset s off\n@xset -dpms\n@xset s noblank" | sudo tee -a ~/.config/lxsession/LXDE-pi/autostart >/dev/null
-					echo -e "@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" | sudo tee -a ~/.config/lxsession/LXDE-pi/autostart >/dev/null
+					echo -e "@xset s off\n@xset -dpms\n@xset s noblank" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
+					echo -e "@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
 					break
 			fi;;
 			1)
 			./RpiKioskMain.sh;;
 		esac
 	else
-		sudo mv ~/.config/lxsession/LXDE-pi/autostart.DSbackup ~/.config/lxsession/LXDE-pi/autostart
+		sudo mv /etc/xdg/lxsession/LXDE-pi/autostart.DSbackup /etc/xdg/lxsession/LXDE-pi/autostart
 	fi
 done
 ##########################################################
