@@ -21,7 +21,7 @@
 			<tr>
 				<td id="blog">
 					<p id="blog"><h2><strong>How To</strong></h2></p>
-					<p id="blog"><b>***NOTE*** This tutorial is for the GUI Version of RpiKiosk.  I will write up a different tutorial for the CLI Version.</br>This program and this tutorial were designed for use with a raspberry pi 2 or 3 with armhf architecture.</br>This program was based on the 2017-11-29-raspbian-stretch version of raspbian.</b></br></p>
+					<p id="blog"><b>***NOTE*** This tutorial is for the GUI Version of RpiKiosk.  I will write up a different tutorial for the CLI Version.</br>This program and this tutorial were designed for use with a raspberry pi 2 or 3 with armhf architecture.</br><s>This program was based on the 2017-11-29-raspbian-stretch version of raspbian.</s> EDIT: Code has been updated to work with new 2018-11-13-raspbian-stretch version of raspbian.</b></br></p>
 					<p id="blog">1. The first thing you will need to do is install Raspian onto your raspberry pi.  To Install Raspian Stretch to your pi please go to <a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a> and follow the instructions there.</br></p>
 					<p id="blog">2. Next, the gui version of this tool does have a dependency to work correctly.  You will need to install the "dialog" package in order to use the GUI version of this tool. You can install "dialog" using the following command on your Pi in the terminal:</br></p>
 					<code><pre>$ sudo apt-get install dialog</pre></code>
@@ -30,12 +30,12 @@
 $ sudo apt-get install git vim clutter</pre></code>
 					<p id="blog">The "git" package is for users that are familiar with using git and want to clone the RpiKiosk Repository rather than downloading the zip file.</br>The "vim" package is simply a terminal text editor.  This package is not crucial but will be of benefit if you are an advanced linux or pi user.</br>The "clutter" package will hide your pi's mouse cursor when it is not being used.  This is good for locations that your kiosk or digital sign will not be within reach of public.  In the case that your kiosk or digital sign is within reach of public, the RpiKioskCursorDisable script will allow you to completely disable your mouse cursor on your pi. (This can be reverted using the RpiKioskCursorEnable script)</br></p>
 					<p id="blog"><h2><strong>DEB PACKAGE USE ONLY</strong></h2></p>
-					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.0-7.deb">rpikiosk_1.0-7.deb</a></br></p>
-					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.0-7.deb
-$ sudo dpkg -i RpiKiosk_1.0-7.deb</pre></code>
+					<p id="blog">If you wish to download the deb package version download the file then run the following commands: <a href="https://github.com/jharttech/RpiKiosk/raw/master/files/RpiKiosk_1.1-0.deb">rpikiosk_1.1-0.deb</a></br></p>
+					<code><pre>$ cd /path/to/downloaded/rpikiosk_1.1-0.deb
+$ sudo dpkg -i RpiKiosk_1.1-0.deb</pre></code>
 					<p id="blog">If the install fails and complains about a dependency the install the "dialog" package using:</br></p>
 					<code><pre>$ sudo apt-get -f install
-$ sudo dpkg -i RpiKiosk_1.0-7.deb</pre></code>
+$ sudo dpkg -i RpiKiosk_1.1-0.deb</pre></code>
 					<p id="blog">Now you can simply run the following command in the terminal and follow on-screen prompts and options.</br></p>
 					<code><pre>$ RpiKioskMain</pre></code>
 					<p id="blog">From here you can select what you would like to do: Install, Uninstall, Enable Mouse, Disable Mouse.</br></p>
