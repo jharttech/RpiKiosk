@@ -131,7 +131,7 @@ while true; do
 					--clear \
 					--sleep 3 \
 					--infobox "Now writing to following entries to the autostart configuration file.\n\n@xset s off\n@xset -dpms\n@xset s noblank\n@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" 0 0
-					echo -e "@xset s off\n@xset -dpms\n@xset s noblank" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
+					echo -e "@lxpanel --profile LXDE-pi\n@pcmanfm --desktop --profile LXDE-pi\n@xscreensaver -no-splash\npoint-rpi\n@xset s off\n@xset -dpms\n@xset s noblank" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
 					echo -e "@chromium-browser --noerrdialogs --disable-infobars --disable-session-crashed-bubble --incognito --kiosk $_URL" | sudo tee -a /etc/xdg/lxsession/LXDE-pi/autostart >/dev/null
 					break
 			fi;;
