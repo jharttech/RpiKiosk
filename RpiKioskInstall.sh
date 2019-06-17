@@ -105,7 +105,7 @@ done
 #######################################################
 
 while true; do
-	_Prev_RanTwo=$(ls ~/.config/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
+	_Prev_RanTwo=$(ls /etc/xdg/lxsession/LXDE-pi/ | grep "autostart.DSbackup")
 	if [ "" == "$_Prev_RanTwo" ];
 	then
 		# Make a copy of original config file
