@@ -184,7 +184,7 @@ while true; do
 
 	dialog --title "Memory Split" \
 	--clear \
-	--yesno "Finally, would you like to change your Pi's Memory Split?\n\n(If you do not know what this means type choose NO)" 0 0
+	--yesno "Would you like to change your Pi's Memory Split?\n\n(If you do not know what this means type choose NO)" 0 0
 	yn=$?
 	if [ "${yn}" == "0" ];
 	then
@@ -240,6 +240,52 @@ while true; do
 	fi
 fi
 
+############################################################
+
+# Here we ask the user if they would like to turn off the wifi power save feature
+
+while true; do
+	dialog --title "Wifi Power Save" \
+	--clear \
+	--yesno "Finally, would you like to turn off the wifi power save feature?\n\n(This is for Rpi's running Stretch and above, if you are running jessie or lower chose NO)" 0 0
+	yn=$?
+	if [ "${yn}" == "0" ];
+	then
+		# Check to see if power manager is alread disabled
+		_AlreadyOff=$(ls /etc/network/if-up.d/ | grep "off-power-manager")
+		if [ "" == "$_AlreadyOff" ];
+		then
+			# Create the startup script needed
+			dialog --title "Turn Off Wifi Power Save" \
+			--clear \
+			--sleep 3 \
+			--infobox "Now going to create the needed startup script to disable wifi power save." 0 0
+			echo -e "#!/bin/sh\n# off-power-manager - Disable the internal power manager of the (built-in) wlan0 device\niw dev wlan0 set power_save off" | sudo tee -a /etc/network/if-up.d/off-power-manager > /dev/null
+			--sleep 2
+			sudo chmod +x /etc/network/if-up.d/off-power-manager
+			sudo /etc/init.d/networking restart
+			iw dev wlan0 get power_save > /tmp/status
+			dialog --title "Power Save Status" \
+				--clear \
+				--timeout 2 \
+				--exit-label "" \
+				--textbox /tmp/status 15 50
+			rm /tmp/status
+		else
+			dialog --title "Power Save Status" \
+			--clear \
+			--sleep 3 \
+			--infobox "Wifi Power Save feature is already disabled.  Nothing to do!" 0 0
+			break
+		fi
+		break
+	else
+		if [ "${yn}" == "1" ];
+		then
+			break
+		fi
+	fi
+done
 
 ##########################################################
 while true; do
