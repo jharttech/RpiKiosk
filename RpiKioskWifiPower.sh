@@ -98,7 +98,7 @@ while true; do
                 --no-label "Restart Now" \
                 --yesno "All done!! Thank You -Jhart" 0 0
         yn=$?
-        if [ "${yn}" == "0"];
+        if [ "${yn}" == "0" ];
         then
                 /usr/local/bin/RpiKioskMain.sh
                 exit
