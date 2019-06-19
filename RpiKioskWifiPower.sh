@@ -64,7 +64,7 @@ while true; do
 				dialog --title "Power Save Status" \
 					--clear \
 					--sleep 3 \
-					--infobox "Wifi Power Save feature is already disabled. Nothing to do!" 0 0
+					--infobox "Wifi Power Save feature is already enabled. Nothing to do!" 0 0
 				break
 		fi
 	fi
