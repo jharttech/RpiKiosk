@@ -60,7 +60,7 @@ then
 		Enable_Mouse)
 			/usr/local/bin/RpiKioskCursorEnable.sh;;
 		Turn_On_Off_Wifi_Power_Save)
-			/usr/local/bin/RpiKioskWifiPowerSave.sh;;
+			/usr/local/bin/RpiKioskWifiPower.sh;;
 	esac
 else if [ "${_Respns}" == "1" ];
 then
