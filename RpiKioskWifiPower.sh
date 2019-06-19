@@ -76,16 +76,17 @@ while true; do
                         	--sleep 3 \
                         	--infobox "Now going to create the needed startup script to disable wifi power save." 0 0
                         echo -e "#!/bin/sh\n# off-power-manager - Disable the internal power manager of the (built-in) wlan0 device\niw dev wlan0 set power_save off" | sudo tee -a /etc/network/if-up.d/off-power-manager > /dev/null
-                        	--sleep 2
+                        	--sleep 2 \
                         sudo chmod +x /etc/network/if-up.d/off-power-manager
                         sudo /etc/init.d/networking restart > /dev/null
-                        iw dev wlan0 get power_save > /tmp/status > /dev/null
+                        iw dev wlan0 get power_save > /tmp/status
                         dialog --title "Power Save Status" \
                                 --clear \
                                 --timeout 2 \
                                 --exit-label "" \
                                 --textbox /tmp/status 15 50
                         rm /tmp/status
+			break
 
 	fi
 fi
