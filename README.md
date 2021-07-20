@@ -20,6 +20,7 @@
 		<table id="blog">
 			<tr>
 				<td id="blog">
+					<p><h2><strong>20210720 ***NOTE*** </strong></h2><b>If you are using the lastest version of RaspiOS, you will need to comment out the "framebuffer_dept24" entry in the /boot/config.txt file!!!! Otherwise your rpi may boot to a flashing cursor on black screen.  If this happens, press "CTRL+ALT+F2" this will get you into a terminal to edit the needed file.</b><p>
 					<p id="blog"><h2><strong>How To</strong></h2></p>
 					<p id="blog"><b>***NOTE*** This tutorial is for the GUI Version of RpiKiosk.  I will write up a different tutorial for the CLI Version.</br>This program and this tutorial were designed for use with a raspberry pi 2 or 3 with armhf architecture.</br><s>This program was based on the 2017-11-29-raspbian-stretch version of raspbian.</s> EDIT: Code has been updated to work with new 2018-11-13-raspbian-stretch version of raspbian.</b></br></p>
 					<p id="blog">1. The first thing you will need to do is install Raspian onto your raspberry pi.  To Install Raspian Stretch to your pi please go to <a href="https://www.raspberrypi.org/downloads/raspbian/">https://www.raspberrypi.org/downloads/raspbian/</a> and follow the instructions there.</br></p>
